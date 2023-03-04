@@ -12,22 +12,21 @@ function createGrid(size) {
 
 createGrid(16)    
 
-// FILL BOXES:
+// FILL BOXES: ----------------------------------------
 // BLACK AND WHITE
 const allBoxes = document.querySelectorAll(".box")
-allBoxes.forEach(function(b) {
+function activateMouseOver(color) {
+    allBoxes.forEach(function(b) {
     b.addEventListener("mouseover", function() {
-        b.style.backgroundColor = "black"
+        b.style.backgroundColor = color
     })
-})
+})}
+activateMouseOver("black")
+// RANDOM COLORS--------------------------------------
 
-//RANDOM COLORS
+// ERASER -------------------------------------------------
 
-
-
-//ERASER
-
-// CLEAR GRID
+// CLEAR GRID -----------------------------------------
 const clear = document.querySelector("#clear")
 function clearBoxes(){
 allBoxes.forEach(function(b) {
@@ -37,27 +36,23 @@ allBoxes.forEach(function(b) {
 clear.addEventListener("click", clearBoxes)
     
 
-// CHANGE GRID SIZE
+// CHANGE GRID SIZE----------------------------------------------
 const changeGridSize = document.querySelector("#newGridSize")
 changeGridSize.addEventListener("click", function() {
     let newSize = prompt("Enter desired grid size (must be 100 or less)")
     if(validateGridSize(newSize)){
-        removeGrid
+        allBoxes.remove()
         createGrid(newSize)
+        adjustGridCSS(grid, newSize)
     }
 })
 
-function removeGrid() {
-    grid.removeChild(".box")
-}
-
 function validateGridSize(size){
-    console.log(size <= 100)
+    return size <= 100
 }
 
-function createCustomGrid(validation, size){
-    if (validation){
-        createGrid(size)
-    }
-
+function adjustGridCSS(element, size) {
+    element.style.gridTemplateColumns = size
+    element.style.gridTemplateRows = size
 }
+
