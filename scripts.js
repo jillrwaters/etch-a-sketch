@@ -11,11 +11,30 @@ function createGrid(size) {
         const box = document.querySelector(".box")
         }
     }
+
+createGrid(16)    
+
+const allBoxes = document.querySelectorAll(".box")
+allBoxes.forEach(function(b) {
+    b.addEventListener("mouseover", function() {
+        b.style.backgroundColor = "black"
+    })
+})
+
+const clear = document.querySelector("#clear")
+
+function clearBoxes(){
+allBoxes.forEach(function(b) {
+    b.style.backgroundColor = "white"
+})
+}
+
+clear.addEventListener("click", clearBoxes)
     
 
 
 
-createGrid(16)
+
 
 // function fillBox(b) {
 //     var bx = b.target
