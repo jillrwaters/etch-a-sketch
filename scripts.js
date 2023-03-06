@@ -78,9 +78,7 @@ let testing2 = 77;
 
 
 
-// grid.classList.add(".resize")
 const resizeButton = document.querySelector("#newGridSize");
-// const resizeClass = document.querySelector(".resize")
 let currentGridSize = initialGridSize
 
 resizeButton.addEventListener("click", function () {
@@ -89,7 +87,6 @@ resizeButton.addEventListener("click", function () {
 
 })
 
-// const grid = document.querySelector("#grid")
 
 function resizeGrid(size) {
   removeGrid();
