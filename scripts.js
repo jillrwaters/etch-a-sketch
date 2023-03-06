@@ -8,11 +8,13 @@ function createGrid(size) {
     const div = document.createElement("div");
     grid.appendChild(div);
     addBoxClass(div)
+    drawOnBoxes(div)
   }
   grid.style.gridTemplateRows = `repeat(${size}, 1fr)`
   grid.style.gridTemplateColumns =`repeat(${size}, 1fr)`
   grid.style.width = "500px";
   grid.style.height = "500px";
+  
 }
 
 createGrid(initialGridSize);
@@ -26,15 +28,15 @@ function testBoxClass(element) {
 }
 
 
-
-
 let allBoxes = document.querySelectorAll(".box");
 
-allBoxes.forEach(function (b) {
-  b.addEventListener("mouseover", function () {
-    b.style.backgroundColor = "black";
+
+
+function drawOnBoxes(element){
+  element.addEventListener("mouseover", function () {
+    element.style.backgroundColor = "black";
   });
-});
+}
 
 const clear = document.querySelector("#clear");
 
@@ -77,7 +79,6 @@ let testing1 = 12;
 let testing2 = 77;
 
 
-
 const resizeButton = document.querySelector("#newGridSize");
 let currentGridSize = initialGridSize
 
@@ -87,11 +88,11 @@ resizeButton.addEventListener("click", function () {
 
 })
 
-
 function resizeGrid(size) {
   removeGrid();
   createGrid(size);
   currentGridSize = size;
+  
 
 }
 
@@ -99,6 +100,7 @@ function removeGrid() {
   allBoxes.forEach(function (box) {
     box.remove()
   })
+  eraser.classList.remove(".clicked")
 }
 
 
