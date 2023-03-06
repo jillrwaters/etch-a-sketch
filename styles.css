@@ -1,12 +1,27 @@
+#wrapper {
+    margin: auto;
+    width: 500px;
+    box-shadow: 2px 2px 2px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
 #grid {
     display: grid;
     grid-template-columns: repeat(16, 1fr);
     grid-template-rows: repeat(16, 1fr);
-    width: 250px;
+    /* width: 100%; */
+    
 }
 
 .box {
     border: 1px solid black;
-    width: 25px;
+    /* width: 50; */
     height: 25px;
+}
+
+#options {
+
 }
