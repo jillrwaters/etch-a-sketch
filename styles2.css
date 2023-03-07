@@ -1,0 +1,45 @@
+body {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    font-family: "ubuntu mono";
+    font-size: 2rem;
+    overflow: hidden;
+    background: black;
+    color: white;
+}
+
+#grid {
+    display: grid;
+    height: 500px;
+    width: 500px;
+    margin: 10px auto;
+}
+
+#wrapper {
+    width: 50vw;
+    height: 100vh;
+    margin: auto;
+    padding-top: 20px;
+    text-align: center;
+}
+
+#options {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    width: 500px;
+    margin: auto;
+    padding: 10px;
+}
+
+button {
+    color: white;
+    background-color: green;
+    font-family: "ubuntu mono";
+    font-size: 1.5rem;
+    border-radius: 3px;
+    padding: 5px;
+    
+}

@@ -100,7 +100,7 @@ function removeGrid() {
   allBoxes.forEach(function (box) {
     box.remove()
   })
-  eraser.classList.remove(".clicked")
+  // eraser.classList.remove(".clicked")
 }
 
 

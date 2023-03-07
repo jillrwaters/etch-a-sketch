@@ -1,23 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etch-A-Sketch</title>
     <link rel="stylesheet" href="styles2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div id="wrapper">
+        
         <h1>Etch-A-Sketch</h1>
-        <div id="grid"></div>
         <div id="options">
-            <button id="eraser">erase</button>
-            <button id="randomColor">random</button>
-            <button id="clear">clear</button>
-            <button id="newGridSize">change grid size</button>
+            <button id="eraser" onclick="changeColor('white')">erase</button>
+            <button onClick="changeColor('black')">black</button>
+            <button id="randomColor" onClick="changeColor('random')">random</button>
+            <button id="clear" onClick="clearGrid()">clear</button>
+            <button onClick=resizeGrid()>size</button>
         </div>
+        <div id="grid"></div>
+        
     </div>
     <script src="scripts2.js"></script>
 </body>
